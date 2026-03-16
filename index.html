@@ -130,7 +130,7 @@
     </div>
 
     <footer>
-        <div class="foot-panel1">
+        <div class="foot-panel1" onclick="scrollToTop()">
             Back to Top
         </div>
         <div class="foot-panel2">
@@ -185,5 +185,30 @@
             </div>
         </div>
     </footer>
+<script>
+function scrollToTop(){
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+const searchInput = document.querySelector(".search-input");
+const boxes = document.querySelectorAll(".box");
+
+searchInput.addEventListener("keyup", function() {
+    const value = searchInput.value.toLowerCase();
+
+    boxes.forEach(box => {
+        const text = box.innerText.toLowerCase();
+        if(text.includes(value)){
+            box.style.display = "block";
+        } else {
+            box.style.display = "none";
+        }
+    });
+});
+</script>
+    
 </body>
 </html>
