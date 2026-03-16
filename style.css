@@ -268,3 +268,14 @@ ul a{
 .copyright{
     text-align: center;
 }
+
+
+/* Hovering Effect */
+
+.box{
+    transition: transform 0.3s ease;
+}
+
+.box:hover{
+    transform: scale(1.05);
+}
