@@ -41,7 +41,7 @@
                 <p><span>Returns</span></p>
                 <p class="nav-second">& Orders</p>
             </div>
-            <div class="nav-cart border">
+            <div class="nav-cart border" onclick="viewCart()">
                 <i class="fa-solid fa-cart-shopping"></i>
                 Cart <span id="cart-count">0</span>
             </div>
@@ -64,6 +64,7 @@
             </div>
         </div>
     </header>
+    <div id="cart-message"></div>
     <div class="hero-section">
         <div class="hero-msg">
             <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local
@@ -209,7 +210,15 @@ function scrollToTop(){
         behavior:"smooth"
     });
 }
+// For Add to cart item adding message popup feature: disappear automatically after 3 seconds
+function viewCart(){
+    const msg = document.getElementById("cart-message");
+    msg.innerText = "🛒 You have " + count + " items in your cart";
 
+    setTimeout(() => {
+        msg.innerText = "";
+    }, 4000);
+}
 // For Search bar filtering item
 const searchInput = document.querySelector(".search-input");
 const boxes = document.querySelectorAll(".box");
